@@ -1,3 +1,44 @@
 .pointer{
   cursor:pointer
 }
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff; /* Button color */
+  color: #fff; /* Text color */
+  text-decoration: none; /* Remove underline */
+  border-radius: 5px; /* Rounded corners */
+  border: none; /* Remove border */
+  cursor: pointer; /* Show pointer cursor on hover */
+}
+
+.button:hover {
+  background-color: #0056b3; /* Darker color on hover */
+}
+
+.select {
+  padding: 10px 20px;
+  background-color: #007bff; /* Button color */
+  color: #fff; /* Text color */
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Show pointer cursor on hover */
+}
+
+/* Styling dropdown arrow */
+.select::-ms-expand {
+  display: none;
+}
+
+.select::after {
+  content: '\25BC'; /* Unicode for down arrow */
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  pointer-events: none; /* Ensure clicks pass through arrow to select */
+}
+
+.select:hover {
+  background-color: #0056b3; /* Darker color on hover */
+}
