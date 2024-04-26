@@ -12,10 +12,3 @@ body {
   padding: 20px;
   z-index: 1000; /* Ensure header is above other content */
 }
-
-.main-content {
-  padding-top: 80px; /* Adjust padding to prevent content from being obscured by the fixed header */
-  /* Example styles for main content */
-  padding: 20px;
-  line-height: 1.6;
-}
