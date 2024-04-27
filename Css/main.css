@@ -1,8 +1,8 @@
 .button {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #007bff;
-  color: #fff;
+  background-color: rgb(0, 123, 255);
+  color: rgb(255, 255, 255);
   text-decoration: none;
   border: none;
   border-radius: 5px;
@@ -10,12 +10,11 @@
 }
 
 .button:hover {
-  background-color: #0056b3; /* Darker color on hover */
+  background-color: rgb(0, 86, 179); /* Darker color on hover */
 }
 
-.aboutustop {
-  color:rgb(0, 0, 0);
-  background-color:rgb(255, 255, 255)
+.button:active {
+  background-color: rgb(0, 92, 200);
 }
 
 .headertitle {
@@ -25,4 +24,27 @@
 .topofthepage {
   margin-top: 160px;
   margin-left: 20px;
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.center-input {
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 200%;
+}
+
+.center-button {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
