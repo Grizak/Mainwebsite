@@ -26,7 +26,7 @@
   margin-left: 20px;
 }
 
-body, html {
+.body {
   height: 100%;
   margin: 0;
   display: flex;
@@ -34,6 +34,16 @@ body, html {
   justify-content: center;
   align-items: center;
 }
+
+.html {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .center-input {
   padding-left: 50px;
   padding-right: 50px;
@@ -47,4 +57,14 @@ body, html {
   padding-right: 20px;
   padding-top: 10px;
   padding-bottom: 10px;
+}
+
+.sticky-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #3abe6d; /* Example background color */
+  color: #fff; /* Example text color */
+  padding: 20px;
+  z-index: 1000; /* Ensure header is above other content */
 }
