@@ -9,7 +9,7 @@ function adminlogin () {
   if (inputPassword === password) {
     window.location.href = 'admin.html';
   } else {
-    window.location.href = '../index.html';
+    window.location.href = 'index.html';
   }
 }
 
@@ -25,10 +25,10 @@ function lastupdated() {
 }
 
 // Establish WebSocket connection
-const socket = io();
+// const socket = io();
 
 // Receive initial data from server
-socket.on('data', (data) => {
+/*socket.on('data', (data) => {
     console.log('Initial data received:', data);
     // Update UI with initial data
     // Example: document.getElementById('variable1').innerText = data.variable1;
@@ -39,6 +39,7 @@ socket.on('data', (data) => {
     console.log('Real-time update received:', data);
     // Update UI with updated data
     // Example: document.getElementById('variable1').innerText = data.variable1;
+});
 
      // Check if SSE is supported by the browser
      if (typeof(EventSource) !== 'undefined') {
@@ -56,4 +57,4 @@ socket.on('data', (data) => {
       console.log('SSE not supported. Fallback to polling...');
       // Fallback to polling mechanism
       // Implement polling logic here
-  }
+  }*/
