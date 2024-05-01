@@ -7,7 +7,7 @@ function adminlogin () {
   let inputPassword = inputElement.value;
 
   if (inputPassword === password) {
-    window.location.href = 'admin.html';
+    window.location.href = 'logedin/admin.html';
   } else {
     window.location.href = 'index.html';
   }
@@ -58,3 +58,18 @@ socket.on('data', (data) => {
       // Fallback to polling mechanism
       // Implement polling logic here
   }*/
+
+let mackieThumpGoStockLeft
+let mackieThumpGoMax
+let mackieThumpGoStock
+
+function setStockMackieThumpGo () {
+  mackieThumpGoStockLeft = parseInt(prompt('Hur mycket har vi kvar i lager'))
+  mackieThumpGoMax = parseInt(prompt('Hur många har vi totalt'))
+  mackieThumpGoStock = `Stock left: ${mackieThumpGoStockLeft}/${mackieThumpGoMax}`
+  document.getElementById('mackiethumpgostock').textContent = mackieThumpGoStock
+}
+
+function navigateMackieThumpGo () {
+  window.location.href = "products/mackiethumpgo.html"
+}
