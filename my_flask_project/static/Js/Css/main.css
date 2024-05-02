@@ -6,7 +6,7 @@
   text-decoration: none;
   border: none;
   border-radius: 5px;
-  margin-left: 10px; /* Adjust margin as needed */
+  margin-left: 20px; /* Adjust margin as needed */
 }
 
 .button:hover {
@@ -164,5 +164,56 @@
 .container-mackie-thumb-go button {
   display: inline-block;
   vertical-align: middle;
-  
+}
+
+.container-Superlux-HMD-66x {
+  margin-top: 50px;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.container-Superlux-HMD-66x img {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.container-Superlux-HMD-66x p {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 15px;
+  font-size: 130%;
+}
+
+.container-Superlux-HMD-66x button {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.button-center-bottom {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: rgb(0, 123, 255);
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  margin-left: 20px; /* Adjust margin as needed */
+}
+
+.product-container {
+  display: flex;
+  align-items: center;
+  vertical-align: top;
+}
+
+.p {
+  font-size: 200%;
+  vertical-align: top;
+  top: 0;
+  margin-left: 20px;
+  margin-top: 10px;
 }
