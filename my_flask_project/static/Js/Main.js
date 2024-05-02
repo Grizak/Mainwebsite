@@ -62,6 +62,9 @@ socket.on('data', (data) => {
 let mackieThumpGoStockLeft
 let mackieThumpGoMax
 let mackieThumpGoStock
+let superluxHMD66xStockLeft
+let SuperluxHMD66xMax
+let superluxHMD66xStock
 
 function setStockMackieThumpGo () {
   mackieThumpGoStockLeft = parseInt(prompt('Hur mycket har vi kvar i lager'))
@@ -72,4 +75,15 @@ function setStockMackieThumpGo () {
 
 function navigateMackieThumpGo () {
   window.location.href = "products/mackiethumpgo.html"
+}
+
+function setStockSuperluxHMD66x () {
+  superluxHMD66xStockLeft = parseInt(prompt('Hur mycket har vi kvar i lager'))
+  SuperluxHMD66xMax = parseInt(prompt('Hur många har vi totalt'))
+  superluxHMD66xStock = `Stock left: ${superluxHMD66xStockLeft}/${SuperluxHMD66xMax}`
+  document.getElementById('superluxHMD66xstock').textcontent = superluxHMD66xStock
+}
+
+function navigateSuperluxHMD66x () {
+  window.location.href = "products/superluxHMD66x.html"
 }
