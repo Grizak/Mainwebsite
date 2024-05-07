@@ -18,7 +18,7 @@
 }
 
 .headertitle {
-  margin-left: 20px;
+  margin-left: 20px;  
 }
 
 .topofthepage {
@@ -219,8 +219,9 @@
   margin-top: 10px;
 }
 
-.margin-left {
+.margin-left-text {
   margin-left: 20px;
+  color: rgb(255, 255, 255);
 }
 
 .a-to-p {
@@ -244,6 +245,18 @@
   font-size: 500%;
 }
 
-.wihte-p {
+.white-p-product {
+  color: rgb(255, 255, 255);
+}
+
+.top-p {
+  margin-top: 160px;
+  margin-left: 20px;
+  color: rgb(255, 255, 255);
+  font-size: 140%;
+}
+
+.lastupdated-p {
+  margin-left: 20px;
   color: rgb(255, 255, 255);
 }

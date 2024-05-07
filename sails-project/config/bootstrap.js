@@ -28,3 +28,30 @@ module.exports.bootstrap = async function() {
   // ```
 
 };
+
+// config/bootstrap.js
+
+module.exports.bootstrap = async function () {
+  try {
+    // Fetch the variable from the database
+    const variable = await Variable.findOne({ name: 'yourVariableName' });
+    if (variable) {
+      // Store the variable value in memory
+      sails.variable = variable.value;
+    }
+  } catch (err) {
+    sails.log.error('Failed to retrieve variable from the database:', err);
+  }
+};
+
+// api/helpers/VariableHelper.js
+
+module.exports = {
+  getVariable: function () {
+    return sails.variable;
+  },
+};
+
+// Example usage in a controller
+const variable = VariableHelper.getVariable();
+console.log('Variable value:', variable);
