@@ -24,41 +24,6 @@ function lastupdated() {
   }
 }
 
-// Establish WebSocket connection
-// const socket = io();
-
-// Receive initial data from server
-/*socket.on('data', (data) => {
-    console.log('Initial data received:', data);
-    // Update UI with initial data
-    // Example: document.getElementById('variable1').innerText = data.variable1;
-});
-
-// Handle real-time updates from server
-socket.on('data', (data) => {
-    console.log('Real-time update received:', data);
-    // Update UI with updated data
-    // Example: document.getElementById('variable1').innerText = data.variable1;
-});
-
-     // Check if SSE is supported by the browser
-     if (typeof(EventSource) !== 'undefined') {
-      // Create SSE connection
-      const eventSource = new EventSource('/sse');
-
-      // Handle SSE messages
-      eventSource.onmessage = (event) => {
-          const data = JSON.parse(event.data);
-          console.log('SSE update received:', data);
-          // Update UI with SSE data
-          // Example: document.getElementById('variable1').innerText = data.variable1;
-      };
-  } else {
-      console.log('SSE not supported. Fallback to polling...');
-      // Fallback to polling mechanism
-      // Implement polling logic here
-  }*/
-
 let mackieThumpGoStockLeft
 let mackieThumpGoMax
 let mackieThumpGoStock
