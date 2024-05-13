@@ -1,5 +1,5 @@
 let password = '10Elias28'
-let fromCorrectFile = false; // Define fromCorrectFile globally
+let fromCorrectFile = false;
 
 function adminlogin () {
   let inputElement = document.getElementById('adminloginprompt');
@@ -14,10 +14,19 @@ function adminlogin () {
 
 function checkFromFile () {
   if (!fromCorrectFile) {
-    window.location.href = "../Notsucceded.html";
+    window.location.href = '../Notsucceded.html';
+    fromCorrectFile = false
+  } else {
+    fromCorrectFile = false
   }
 }
 
+function logout () {
+  let areYouShure = prompt('Are you shure that you want to log out (y/n)')
+  if (areYouShure === 'y') {
+    window.location.href = '../index.html'
+  }
+}
 
 function lastupdated() {
   let newDate = prompt('Skriv dagens datum i detta format (dd/mm-åååå)');
@@ -58,6 +67,18 @@ function setStockSuperluxHMD66x () {
 function navigateSuperluxHMD66x () {
   window.location.href = "products/superluxHMD66x.html"
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*!
  * Socket.IO v4.0.1
