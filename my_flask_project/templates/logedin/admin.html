@@ -4,21 +4,26 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>DJ Lärkiboy Ljud Och Ljus</title>
-       <script src="../../static/Js/Main.js"></script>
-       <link rel="stylesheet" href="../../static/Css/main.css">
-       <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+      <script src="../../static/Js/Main.js"></script>
+      <link rel="stylesheet" href="../../static/Css/main.css">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+      <script>
+        window.onload = checkFromFile()
+      </script>
     </head>
     <body class="indexbody">
       <header class="sticky-header">
         <h2>DJ Lärkiboy Ljud Och Ljus</h2>
         <div class="right-button-container">
           <a href="uthyrning.html" class="button">Uthyrning av Ljud och Ljus-utrustning</a>
-          <a class="button" href="tjänster.html">Våra tjänster</a>
           <a href="admin.html" class="button">Admin homepage</a>
           <a href="../index.html" class="button-admin">Logga ut</a>
         </div>
-     </header>
-       <button onclick="lastupdated()" class="lastupdated">Välj när sidan updaterades senast</button>
+      </header>
+
+      <div class="top-div">
+       <button onclick="lastupdated()" class="button">Välj när sidan updaterades senast</button>
+      </div>
     </body>
   </html>
   
