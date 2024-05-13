@@ -24,11 +24,6 @@ function lastupdated() {
   }
 }
 
-while (1 === 1) {
-  document.getElementById('mackiethumpgostock').textContent = mackieThumpGoStock
-  document.getElementById('superluxHMD66xstock').textcontent = superluxHMD66xStock
-}
-
 let mackieThumpGoStockLeft
 let mackieThumpGoMax
 let mackieThumpGoStock
