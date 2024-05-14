@@ -209,6 +209,7 @@
   display: flex;
   align-items: center;
   vertical-align: top;
+  flex-direction: column;
 }
 
 .p {
