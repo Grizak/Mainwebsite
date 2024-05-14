@@ -278,3 +278,27 @@ p {
   margin-top: 200px;
   margin-left: 20px;
 }
+
+
+.container-AKG-DST-99-S {
+  margin-top: 50px;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.container-AKG-DST-99-S img {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.container-AKG-DST-99-S p {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 15px;
+  font-size: 130%;
+}
+
+.container-AKG-DST-99-S button {
+  display: inline-block;
+  vertical-align: middle;
+}
