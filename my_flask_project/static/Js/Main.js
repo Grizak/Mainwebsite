@@ -68,6 +68,10 @@ function navigateSuperluxHMD66x () {
   window.location.href = "products/superluxHMD66x.html"
 }
 
+function navigateAKGDST99S () {
+  window.location.href = "products/AKGDST99S.html"
+}
+
 
 
 
