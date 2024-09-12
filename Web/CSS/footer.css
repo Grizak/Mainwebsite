@@ -1,0 +1,90 @@
+/* Footer Styling */
+footer {
+  background-color: #333; /* Dark background */
+  color: #fff; /* White text */
+  padding: 40px 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Footer Container */
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; /* For responsive layout */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Footer Sections */
+.footer-section {
+  flex: 1;
+  margin: 20px;
+}
+
+.footer-section h3, .footer-section h4 {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  color: #ff4081; /* Accent color */
+}
+
+.footer-section p, .footer-section a {
+  color: #ccc;
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  color: #ff4081;
+}
+
+/* Footer Links */
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+  color: #ccc;
+  font-size: 1rem;
+}
+
+/* Social Icons */
+.social-icons {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.social-icons a {
+  margin-right: 10px;
+}
+
+.social-icons img {
+  width: 30px;
+  height: 30px;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  background-color: #222;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #bbb;
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-section {
+    margin: 10px 0;
+  }
+}
