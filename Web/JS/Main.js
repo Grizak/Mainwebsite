@@ -17,8 +17,8 @@ function loadFooter() {
 }
 
 function wO () {
-  loadFooter()
   loadHeader()
+  loadFooter()
 }
 
 window.onload = wO();

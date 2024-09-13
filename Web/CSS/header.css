@@ -7,7 +7,7 @@
 
 /* Header Styling */
 header {
-  background-color: #333; /* Dark background */
+  background-color: #3f3f3f33; /* Dark background */
   padding: 20px 0;
   width: 100%;
   position: fixed; /* Makes the header fixed at the top */
