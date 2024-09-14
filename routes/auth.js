@@ -1,66 +1,59 @@
 const express = require('express');
-const User = require('./models/user.js');
-const jwt = require('jsonwebtoken');
-const bcrypt = require('bcryptjs');
 const router = express.Router();
+const bcrypt = require('bcryptjs');
+const User = require('../models/user'); // Assuming user model is defined
 
-// Registration Route
-router.get('/register', (req, res) => {
-  res.render('register');
-});
-
+// Register route
 router.post('/register', async (req, res) => {
-  const { username, email, password } = req.body;
+    const { username, email, password } = req.body;
 
-  try {
-    // Check if user already exists
-    const existingUser = await User.findOne({ email });
-    if (existingUser) {
-      return res.status(400).send('User already exists');
+    try {
+        // Check if the user already exists
+        let user = await User.findOne({ email });
+        if (user) {
+            return res.status(400).send('User already exists');
+        }
+
+        // Hash the password
+        const salt = await bcrypt.genSalt(10);
+        const hashedPassword = await bcrypt.hash(password, salt);
+
+        // Create new user
+        user = new User({
+            username,
+            email,
+            password: hashedPassword,
+        });
+
+        await user.save();
+        res.redirect('/login');
+    } catch (err) {
+        console.error(err);
+        res.status(500).send('Server error');
     }
-
-    // Create a new user
-    const user = new User({ username, email, password });
-    await user.save();
-
-    res.redirect('/auth/login');
-  } catch (err) {
-    res.status(500).send('Error registering user');
-  }
 });
 
-// Login Route
-router.get('/login', (req, res) => {
-  res.render('login');
-});
-
+// Login route
 router.post('/login', async (req, res) => {
-  const { email, password } = req.body;
+    const { email, password } = req.body;
 
-  try {
-    // Find user
-    const user = await User.findOne({ email });
-    if (!user) {
-      return res.status(400).send('Invalid Email');
+    try {
+        const user = await User.findOne({ email });
+        if (!user) {
+            return res.status(400).send('Invalid credentials');
+        }
+
+        const isMatch = await bcrypt.compare(password, user.password);
+        if (!isMatch) {
+            return res.status(400).send('Invalid credentials');
+        }
+
+        // Redirect to the home page after login (or implement session management)
+        res.redirect('/');
+    } catch (err) {
+        console.error(err);
+        res.status(500).send('Server error');
     }
-
-    // Check password
-    const isMatch = await user.comparePassword(password);
-    if (!isMatch) {
-      return res.status(400).send('Invalid Password');
-    }
-
-    // Generate JWT token
-    const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, {
-      expiresIn: '1h',
-    });
-
-    // Send token as a cookie (or handle in another way)
-    res.cookie('token', token, { httpOnly: true });
-    res.redirect('/');
-  } catch (err) {
-    res.status(500).send('Login error');
-  }
 });
 
 module.exports = router;

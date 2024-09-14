@@ -1,26 +1,22 @@
-// Function to load the header from header.html
-function loadHeader() {
-  fetch('/public/html/header.html')
-      .then(response => response.text())
-      .then(data => {
-          document.getElementById('header').innerHTML = data;
+// Function to load external HTML content into the page
+function loadContent(selector, file) {
+  fetch(file)
+      .then(response => {
+          if (!response.ok) {
+              throw new Error("Network response was not ok");
+          }
+          return response.text();
       })
-      .catch(error => console.error('Error loading header:', error));
-}
-
-// Function to load the footer from footer.html
-function loadFooter() {
-  fetch('/public/html/footer.html')
-      .then(response => response.text())
       .then(data => {
-          document.getElementById('footer').innerHTML = data;
+          document.querySelector(selector).innerHTML = data;
       })
-      .catch(error => console.error('Error loading footer:', error));
+      .catch(error => {
+          console.error('There was a problem with the fetch operation:', error);
+      });
 }
 
-function wonload () {
-  loadHeader();
-  loadFooter();
-}
-
-window.onload = wonload()
+// Load header and footer
+window.onload = function() {
+  loadContent("#header", "../html/header.html");
+  loadContent("#footer", "../html/footer.html");
+};

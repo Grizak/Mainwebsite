@@ -1,13 +1,38 @@
-<header>
-  <h1>Dj Lärkiboy Ljud Och Ljus</h1>
-  <nav>
-    <ul>
-      <li><a href="/public/html/home.html">Home</a></li>
-      <li><a href="/public/html/eqipment.html">Equipment</a></li>
-      <li><a href="/public/html/contact.html">Contact</a></li>
-      <li><a href="/public/html/about.html">About Us</a></li>
-    </ul>
-  </nav>
-</header>
-
-<link rel="stylesheet" href="/public/css/main.css">
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="../css/main.css">
+    <script defer>
+       // Ensure the function is only defined when the DOM is fully loaded
+       window.onload = function() {
+        const selectElement = document.getElementById("pageSelect");
+        
+        selectElement.onchange = function() {
+          const selectedValue = selectElement.value;
+          if (selectedValue) {
+            window.location.href = selectedValue;
+          }
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <header>
+      <h1>DJ Lärkiboy Sound and Light Equipment Rentals</h1>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/equipment">Equipment</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/faq">FAQ</a></li>
+          <li><select id="pageSelect">
+            <option value="">My Account</option>
+            <option value="/login">Login</option>
+            <option value="/register">Register</option>
+          </select></li>
+        </ul>
+      </nav>
+    </header>
+  </body>
+</html>
