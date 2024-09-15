@@ -1,59 +1,35 @@
 const express = require('express');
+const passport = require('passport');
+const User = require('../models/user');
 const router = express.Router();
-const bcrypt = require('bcryptjs');
-const User = require('../models/user'); // Assuming user model is defined
 
-// Register route
+// Register a new user
 router.post('/register', async (req, res) => {
-    const { username, email, password } = req.body;
-
-    try {
-        // Check if the user already exists
-        let user = await User.findOne({ email });
-        if (user) {
-            return res.status(400).send('User already exists');
-        }
-
-        // Hash the password
-        const salt = await bcrypt.genSalt(10);
-        const hashedPassword = await bcrypt.hash(password, salt);
-
-        // Create new user
-        user = new User({
-            username,
-            email,
-            password: hashedPassword,
-        });
-
-        await user.save();
-        res.redirect('/login');
-    } catch (err) {
-        console.error(err);
-        res.status(500).send('Server error');
-    }
+  const { username, password } = req.body;
+  try {
+    const user = new User({ username, password, role: 'admin' }); // Assign role dynamically as needed
+    await user.save();
+    res.json({ message: 'User registered successfully' });
+    res.sendFile(path.join(__dirname, '../public/html/account/login.html'));
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+    res.sendFile(path.join(__dirname, '../public/html/account/register.html'));
+  }
 });
 
-// Login route
-router.post('/login', async (req, res) => {
-    const { email, password } = req.body;
+// Login
+router.post('/login', passport.authenticate('local'), (req, res) => {
+  res.json({ message: 'Logged in successfully' });
+  res.sendFile(path.join(__dirname, ''))
+});
 
-    try {
-        const user = await User.findOne({ email });
-        if (!user) {
-            return res.status(400).send('Invalid credentials');
-        }
-
-        const isMatch = await bcrypt.compare(password, user.password);
-        if (!isMatch) {
-            return res.status(400).send('Invalid credentials');
-        }
-
-        // Redirect to the home page after login (or implement session management)
-        res.redirect('/');
-    } catch (err) {
-        console.error(err);
-        res.status(500).send('Server error');
-    }
+// Logout
+router.get('/logout', (req, res) => {
+  req.logout(err => {
+    if (err) { return next(err); }
+    res.json({ message: 'Logged out successfully' });
+    res.sendFile()
+  });
 });
 
 module.exports = router;

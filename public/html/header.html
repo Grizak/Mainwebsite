@@ -3,14 +3,20 @@
   <head>
     <link rel="stylesheet" href="../css/main.css">
     <script defer>
-       // Ensure the function is only defined when the DOM is fully loaded
        window.onload = function() {
         const selectElement = document.getElementById("pageSelect");
         
+        // Add onchange event handler
         selectElement.onchange = function() {
           const selectedValue = selectElement.value;
+          
+          // Debugging: Log the selected value to ensure it's correct
+          console.log('Selected value:', selectedValue);
+
           if (selectedValue) {
-            window.location.href = selectedValue;
+            // Debugging: Log that redirection will happen
+            console.log('Redirecting to:', selectedValue);
+            window.location.href = selectedValue; // Redirect to selected page
           }
         };
       };
@@ -26,11 +32,8 @@
           <li><a href="/equipment">Equipment</a></li>
           <li><a href="/contact">Contact</a></li>
           <li><a href="/faq">FAQ</a></li>
-          <li><select id="pageSelect">
-            <option value="">My Account</option>
-            <option value="/login">Login</option>
-            <option value="/register">Register</option>
-          </select></li>
+          <li><a href="/login">Login</a></li>
+          <li><a href="/register">Register</a></li>
         </ul>
       </nav>
     </header>
