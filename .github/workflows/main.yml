@@ -38,11 +38,11 @@ jobs:
     - name: Merge upstream changes
       run: |
         git checkout web  # Ensure you are on the correct branch
-        git merge upstream/web  # Change the branch name if needed
+         git merge upstream/main --allow-unrelated-histories || true  # Allow unrelated histories
 
     # Push the changes to your forked repository
     - name: Push changes
       run: |
-        git push origin web
+         git push origin web
       env:
         TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Use GitHub token for authentication
