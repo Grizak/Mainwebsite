@@ -4,7 +4,7 @@ name: Sync Fork with Upstream
 on:
   push:
     branches:
-      - main  # Change this to the branch you want to sync
+      - Web  # Change this to the branch you want to sync
   workflow_dispatch:  # Allows you to manually trigger the workflow
   schedule:
     - cron: '0 0 * * *'  # Runs every day at midnight (optional)
@@ -16,7 +16,7 @@ jobs:
     steps:
     # Checkout the repository
     - name: Checkout repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       with:
         persist-credentials: false  # Ensure the GitHub token is not persisted
 
