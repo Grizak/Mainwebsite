@@ -4,7 +4,7 @@ name: Sync Fork with Upstream
 on:
   push:
     branches:
-      - Web  # Change this to the branch you want to sync
+      - web  # Change this to the branch you want to sync
   workflow_dispatch:  # Allows you to manually trigger the workflow
   schedule:
     - cron: '0 0 * * *'  # Runs every day at midnight (optional)
@@ -37,12 +37,12 @@ jobs:
     # Merge upstream changes into the local repository
     - name: Merge upstream changes
       run: |
-        git checkout Web  # Ensure you are on the correct branch
-        git merge upstream/Web  # Change the branch name if needed
+        git checkout web  # Ensure you are on the correct branch
+        git merge upstream/web  # Change the branch name if needed
 
     # Push the changes to your forked repository
     - name: Push changes
       run: |
-        git push origin Web
+        git push origin web
       env:
         TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Use GitHub token for authentication
