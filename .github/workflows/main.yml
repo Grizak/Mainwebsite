@@ -6,8 +6,6 @@ on:
     branches:
       - web  # Change this to the branch you want to sync
   workflow_dispatch:  # Allows you to manually trigger the workflow
-  schedule:
-    - cron: '0 0 * * *'  # Runs every day at midnight (optional)
 
 jobs:
   sync:
