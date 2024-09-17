@@ -43,6 +43,4 @@ jobs:
     # Push the changes to your forked repository
     - name: Push changes
       run: |
-         git push origin web
-      env:
-        TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Use GitHub token for authentication
+         git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/your-username/your-fork-repo.git web
